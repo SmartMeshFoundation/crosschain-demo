@@ -1,2 +1,2 @@
 # Atmosphere
-Atomic Cross-Chain Swaps between Bitcoin Litecoin Ethereum Spectrum
+Atomic Cross-Chain Swaps lnclude Bitcoin,Litecoin,Ethereum,Spectrum and more blockchains.
