@@ -1,0 +1,1 @@
+./Atmosphere --sm-client http://localhost:5002 --lnd-client localhost:10002 --listen localhost:7002
