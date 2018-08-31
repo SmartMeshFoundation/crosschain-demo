@@ -82,3 +82,12 @@ func TestLndAPI_SendPayment(t *testing.T) {
 		t.Error("not found")
 	}
 }
+
+func TestLndAPI_ChannelBalance(t *testing.T) {
+	l := NewLndAPI("localhost:10001")
+	resp, err := l.ChannelBalance()
+	if err != nil {
+		t.Error(err)
+	}
+	PrintRespJSON(resp)
+}

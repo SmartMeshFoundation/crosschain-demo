@@ -116,6 +116,10 @@ func (l *LndAPI) SendPayment(amount int64, receipt string, lockSecretHsh common.
 	PrintRespJSON(req)
 	return l.client.SendPaymentSync(context.Background(), req)
 }
+func (l*LndAPI) ChannelBalance()( resp*lnrpc.ChannelBalanceResponse, err error){
+	req:=&lnrpc.ChannelBalanceRequest{}
+	return l.client.ChannelBalance(context.Background(),req)
+}
 func PrintRespJSON(resp proto.Message) {
 	jsonMarshaler := &jsonpb.Marshaler{
 		EmitDefaults: true,
