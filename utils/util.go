@@ -13,6 +13,9 @@ import (
 //EmptyHash all zero,invalid
 var EmptyHash = common.Hash{}
 
+//EmptyAddress all zero,invalid
+var EmptyAddress = common.Address{}
+
 func NewRandomHash() (hash common.Hash) {
 	u2, err := uuid.NewV4()
 	if err != nil {

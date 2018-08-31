@@ -3,6 +3,7 @@ package smapi
 import (
 	"log"
 	"math/big"
+	"net/http"
 
 	"fmt"
 
@@ -139,6 +140,27 @@ func (sm *SmAPI) GetNodeAddress() (nodeAddress common.Address, err error) {
 }
 
 //GetBalanceByTokenAddress : proxy
-func (sm *SmAPI) GetBalanceByTokenAddress(tokenAddressStr string) (statusCode int, body []byte, err error) {
-	return httphelper.Get(sm.Host + "/api/1/balance/" + tokenAddressStr)
+//func (sm *SmAPI) GetBalanceByTokenAddress2(tokenAddressStr string) (statusCode int, body []byte, err error) {
+//	return httphelper.Get(sm.Host + "/api/1/balance/" + tokenAddressStr)
+//}
+
+//GetBalanceByTokenAddress : proxy
+func (sm *SmAPI) GetBalanceByTokenAddress(tokenAddressStr string) (balances []*SmBalanceResponseDetailDTO, err error) {
+	statueCode, body, err := httphelper.Get(sm.Host + "/api/1/balance/" + tokenAddressStr)
+	if err != nil {
+		log.Printf("SmAPI---> GetBalanceByTokenAddress FAILED : err=%s\n", err.Error())
+		return
+	}
+	if statueCode != http.StatusOK {
+		var buf *struct {
+			ErrorMsg string `json:"Error"`
+		}
+		err = json.Unmarshal(body, buf)
+		if err == nil {
+			err = errors.New(buf.ErrorMsg)
+		}
+		return
+	}
+	err = json.Unmarshal(body, &balances)
+	return
 }
