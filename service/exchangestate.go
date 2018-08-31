@@ -13,12 +13,13 @@ import (
 
 	"fmt"
 
+	"errors"
+
 	"github.com/SmartMeshFoundation/Atmosphere/lndapi"
 	"github.com/SmartMeshFoundation/Atmosphere/smapi"
 	"github.com/SmartMeshFoundation/Atmosphere/utils"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/lightningnetwork/lnd/lnrpc"
-	"errors"
 )
 
 // Partition : Exchange交易参与者
@@ -55,11 +56,11 @@ type ExchangeState struct {
 func RegisterExchangeStateBySmSender(partnerSmAddress, smTokenAddress common.Address, smAmount *big.Int, lndAmount *big.Int, secret common.Hash) (state *ExchangeState, err error) {
 	state = new(ExchangeState)
 	state.SmSender, state.LndSender = new(Partition), new(Partition)
-	state.LndAPI = lndAPI
-	state.SmAPI = smAPI
+	state.LndAPI = LndAPI
+	state.SmAPI = SmAPI
 	// 1. 注册信息
 	// 自己的sm地址从本地节点获取
-	state.SmSender.SmAddress = smAPI.AccountAddress
+	state.SmSender.SmAddress = state.SmAPI.AccountAddress
 	state.LndSender.SmAddress = partnerSmAddress
 	state.SmTokenAddress = smTokenAddress
 	state.SmAmount = smAmount
@@ -154,11 +155,11 @@ func (es *ExchangeState) waitingTransferOnLnd() (err error) {
 func RegisterExchangeStateByLndSender(targetLndAddress string, smTokenAddress common.Address, smAmount *big.Int, lndAmount *big.Int, lockSecretHash common.Hash) (state *ExchangeState, err error) {
 	state = new(ExchangeState)
 	state.SmSender, state.LndSender = new(Partition), new(Partition)
-	state.LndAPI = lndAPI
-	state.SmAPI = smAPI
+	state.LndAPI = LndAPI
+	state.SmAPI = SmAPI
 	// 1. 注册信息
 	// 自己的sm地址从本地节点获取
-	state.LndSender.SmAddress = smAPI.AccountAddress
+	state.LndSender.SmAddress = state.SmAPI.AccountAddress
 	state.SmSender.LndAddress = targetLndAddress
 	state.SmTokenAddress = smTokenAddress
 	state.SmAmount = smAmount

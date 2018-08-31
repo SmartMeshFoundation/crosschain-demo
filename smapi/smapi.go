@@ -137,3 +137,8 @@ func (sm *SmAPI) GetNodeAddress() (nodeAddress common.Address, err error) {
 	sm.AccountAddress = nodeAddress
 	return
 }
+
+//GetBalanceByTokenAddress : proxy
+func (sm *SmAPI) GetBalanceByTokenAddress(tokenAddressStr string) (statusCode int, body []byte, err error) {
+	return httphelper.Get(sm.Host + "/api/1/balance/" + tokenAddressStr)
+}

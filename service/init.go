@@ -5,11 +5,14 @@ import (
 	"github.com/SmartMeshFoundation/Atmosphere/smapi"
 )
 
-var smAPI *smapi.SmAPI
-var lndAPI *lndapi.LndAPI
+// api of smartraiden
+var SmAPI *smapi.SmAPI
+
+// api of lnd
+var LndAPI *lndapi.LndAPI
 
 // InitAPI :
 func InitAPI(smHost, lndHost string) {
-	smAPI = smapi.NewSmAPI(smHost)
-	lndAPI = lndapi.NewLndAPI(lndHost)
+	SmAPI = smapi.NewSmAPI(smHost)
+	LndAPI = lndapi.NewLndAPI(lndHost)
 }
