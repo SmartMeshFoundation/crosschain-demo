@@ -2,6 +2,6 @@
 
 Atomic Cross-Chain Swaps between Bitcoin,Litecoin,Ethereum,Spectrum and more blockchains.
 
-## Build the source 
+## How it use
 
-For prerequisites and detailed build instructions please read the [Cross-Chain Atomic Exchange](https://github.com/SmartMeshFoundation/Atmosphere/wiki/Cross-Chain-Atomic-Exchange) on the wiki.
+For detail how to use SmartRaiden and LND for Cross-Chain Atomic Exchange read the [Cross-Chain Atomic Exchange](https://github.com/SmartMeshFoundation/Atmosphere/wiki/Cross-Chain-Atomic-Exchange) on the wiki.
