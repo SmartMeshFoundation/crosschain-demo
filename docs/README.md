@@ -1,4 +1,4 @@
-# Atmosphere
+# crosschain-demo
 
 Atomic Cross-Chain Swaps between Bitcoin,Litecoin,Ethereum,Spectrum and more blockchains.
 
