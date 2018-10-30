@@ -1,4 +1,4 @@
-package smapi
+package photonapi
 
 import (
 	"log"

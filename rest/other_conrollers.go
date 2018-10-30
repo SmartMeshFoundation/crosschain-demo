@@ -5,8 +5,8 @@ import (
 
 	"net/http"
 
+	"github.com/SmartMeshFoundation/crosschain-demo/photonapi"
 	"github.com/SmartMeshFoundation/crosschain-demo/service"
-	"github.com/SmartMeshFoundation/crosschain-demo/smapi"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/lightningnetwork/lnd/lnrpc"
 )
@@ -14,10 +14,10 @@ import (
 // GetBalance : get both balance on smartraiden and lnd
 func GetBalance(w rest.ResponseWriter, r *rest.Request) {
 	type Balance struct {
-		SmBalance       []*smapi.SmBalanceResponseDetailDTO `json:"smartraiden_balance,omitempty"`
-		SmBalanceError  string                              `json:"smart_raiden_balance_error,omitempty"`
-		LndBalance      *lnrpc.ChannelBalanceResponse       `json:"lnd_balance,omitempty"`
-		LndBalanceError string                              `json:"lnd_balance_error,omitempty"`
+		SmBalance       []*photonapi.SmBalanceResponseDetailDTO `json:"smartraiden_balance,omitempty"`
+		SmBalanceError  string                                  `json:"smart_raiden_balance_error,omitempty"`
+		LndBalance      *lnrpc.ChannelBalanceResponse           `json:"lnd_balance,omitempty"`
+		LndBalanceError string                                  `json:"lnd_balance_error,omitempty"`
 	}
 	balance := new(Balance)
 

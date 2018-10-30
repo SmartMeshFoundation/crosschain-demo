@@ -2,17 +2,17 @@ package service
 
 import (
 	"github.com/SmartMeshFoundation/crosschain-demo/lndapi"
-	"github.com/SmartMeshFoundation/crosschain-demo/smapi"
+	"github.com/SmartMeshFoundation/crosschain-demo/photonapi"
 )
 
 // SmAPI api of photon
-var SmAPI *smapi.SmAPI
+var SmAPI *photonapi.SmAPI
 
 // LndAPI api of lnd
 var LndAPI *lndapi.LndAPI
 
 // InitAPI :
 func InitAPI(smHost, lndHost string) {
-	SmAPI = smapi.NewSmAPI(smHost)
+	SmAPI = photonapi.NewSmAPI(smHost)
 	LndAPI = lndapi.NewLndAPI(lndHost)
 }

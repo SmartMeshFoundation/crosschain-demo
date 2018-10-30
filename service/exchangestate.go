@@ -17,7 +17,7 @@ import (
 
 	"github.com/SmartMeshFoundation/Photon/utils"
 	"github.com/SmartMeshFoundation/crosschain-demo/lndapi"
-	"github.com/SmartMeshFoundation/crosschain-demo/smapi"
+	"github.com/SmartMeshFoundation/crosschain-demo/photonapi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/lightningnetwork/lnd/lnrpc"
 )
@@ -47,7 +47,7 @@ type ExchangeState struct {
 	/*
 		handler
 	*/
-	SmAPI  *smapi.SmAPI
+	SmAPI  *photonapi.SmAPI
 	LndAPI *lndapi.LndAPI
 }
 
