@@ -69,7 +69,7 @@ func RegisterExchangeStateBySmSender(partnerSmAddress, smTokenAddress common.Add
 	state.LockSecretHash = utils.ShaSecret(secret.Bytes())
 	log.Println("ExchangeState register done ...")
 	// 2. 异步调用SmAPI发送MediatedTransfer
-	state.sendTransferOnSmartraiden()
+	state.sendTransferOnPhoton()
 	log.Println("ExchangeState send transfer on smartraiden done ...")
 	// 3. 发送完成后SmSender调用AddInvoice发送paymentReq
 	err = state.sendAddInvoice()
@@ -88,7 +88,7 @@ func RegisterExchangeStateBySmSender(partnerSmAddress, smTokenAddress common.Add
 	return
 }
 
-func (es *ExchangeState) sendTransferOnSmartraiden() {
+func (es *ExchangeState) sendTransferOnPhoton() {
 	es.SmAPI.SendTransferWithSecretAsync(es.LndSender.SmAddress, es.SmTokenAddress, es.SmAmount, es.Secret)
 }
 
@@ -167,11 +167,11 @@ func RegisterExchangeStateByLndSender(targetLndAddress string, smTokenAddress co
 	state.LockSecretHash = lockSecretHash
 	// 2. 启动轮询,等待在smartraiden上收到锁为lockSecretHash的交易
 	log.Println("ExchangeState start waiting for transfer on smartraiden ...")
-	err = state.waitingTransferOnSmartraiden()
+	err = state.waitingTransferOnPhoton()
 	return
 }
 
-func (es *ExchangeState) waitingTransferOnSmartraiden() (err error) {
+func (es *ExchangeState) waitingTransferOnPhoton() (err error) {
 	type SmTransferDataResponse struct {
 		Initiator      string   `json:"initiator_address"`
 		Target         string   `json:"target_address"`
