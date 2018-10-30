@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/SmartMeshFoundation/Atmosphere/rest"
-	"github.com/SmartMeshFoundation/Atmosphere/service"
+	"github.com/SmartMeshFoundation/crosschain-demo/rest"
+	"github.com/SmartMeshFoundation/crosschain-demo/service"
 	"github.com/urfave/cli"
 )
 

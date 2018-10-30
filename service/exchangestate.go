@@ -15,9 +15,9 @@ import (
 
 	"errors"
 
-	"github.com/SmartMeshFoundation/Atmosphere/lndapi"
-	"github.com/SmartMeshFoundation/Atmosphere/smapi"
-	"github.com/SmartMeshFoundation/Atmosphere/utils"
+	"github.com/SmartMeshFoundation/Photon/utils"
+	"github.com/SmartMeshFoundation/crosschain-demo/lndapi"
+	"github.com/SmartMeshFoundation/crosschain-demo/smapi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/lightningnetwork/lnd/lnrpc"
 )

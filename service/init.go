@@ -1,14 +1,14 @@
 package service
 
 import (
-	"github.com/SmartMeshFoundation/Atmosphere/lndapi"
-	"github.com/SmartMeshFoundation/Atmosphere/smapi"
+	"github.com/SmartMeshFoundation/crosschain-demo/lndapi"
+	"github.com/SmartMeshFoundation/crosschain-demo/smapi"
 )
 
-// api of smartraiden
+// SmAPI api of photon
 var SmAPI *smapi.SmAPI
 
-// api of lnd
+// LndAPI api of lnd
 var LndAPI *lndapi.LndAPI
 
 // InitAPI :

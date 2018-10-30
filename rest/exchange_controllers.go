@@ -5,8 +5,8 @@ import (
 	"math/big"
 	"net/http"
 
-	"github.com/SmartMeshFoundation/Atmosphere/service"
-	"github.com/SmartMeshFoundation/Atmosphere/utils"
+	"github.com/SmartMeshFoundation/crosschain-demo/service"
+	"github.com/SmartMeshFoundation/crosschain-demo/utils"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/ethereum/go-ethereum/common"
 )

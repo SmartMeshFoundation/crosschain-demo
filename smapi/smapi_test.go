@@ -9,7 +9,7 @@ import (
 
 	"time"
 
-	"github.com/SmartMeshFoundation/Atmosphere/utils"
+	"github.com/SmartMeshFoundation/crosschain-demo/utils"
 	"github.com/ethereum/go-ethereum/common"
 )
 

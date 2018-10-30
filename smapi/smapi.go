@@ -11,8 +11,8 @@ import (
 
 	"encoding/json"
 
-	"github.com/SmartMeshFoundation/Atmosphere/httphelper"
-	"github.com/SmartMeshFoundation/Atmosphere/utils"
+	"github.com/SmartMeshFoundation/crosschain-demo/httphelper"
+	"github.com/SmartMeshFoundation/crosschain-demo/utils"
 	"github.com/ethereum/go-ethereum/common"
 )
 

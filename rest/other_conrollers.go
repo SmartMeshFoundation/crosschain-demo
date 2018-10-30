@@ -5,8 +5,8 @@ import (
 
 	"net/http"
 
-	"github.com/SmartMeshFoundation/Atmosphere/service"
-	"github.com/SmartMeshFoundation/Atmosphere/smapi"
+	"github.com/SmartMeshFoundation/crosschain-demo/service"
+	"github.com/SmartMeshFoundation/crosschain-demo/smapi"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/lightningnetwork/lnd/lnrpc"
 )

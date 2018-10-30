@@ -3,6 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "bb5IWEgVke9aB+rGtM6T66vnV1I=",
+			"path": "github.com/SmartMeshFoundation/Photon/utils",
+			"revision": "84407665715aeee6d73a0e2e94a9bd0bb3f933ba",
+			"revisionTime": "2018-10-29T11:21:20Z"
+		},
+		{
 			"checksumSHA1": "KMTpIQS+cdSCzMN5TC6GfNLTv0o=",
 			"path": "github.com/ant0ine/go-json-rest/rest",
 			"revision": "ebb33769ae013bd5f518a8bac348c310dea768b8",
@@ -490,5 +496,5 @@
 			"revisionTime": "2018-02-27T02:05:53Z"
 		}
 	],
-	"rootPath": "github.com/SmartMeshFoundation/Atmosphere"
+	"rootPath": "github.com/SmartMeshFoundation/crosschain-demo"
 }
